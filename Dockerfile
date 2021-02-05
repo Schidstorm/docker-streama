@@ -15,6 +15,8 @@ USER streama
 WORKDIR /app
 COPY --chown=streama:streama --from=downloader /streama.jar /app/streama.jar
 RUN chmod +x /app/streama.jar
+RUN mkdir config
+RUN ln -s config/application.yml application.yml 
 
 ENTRYPOINT [ "java", "-jar", "streama.jar" ]
 
