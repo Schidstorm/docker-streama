@@ -3,8 +3,8 @@ FROM alpine as downloader
 ARG STREAMA_VERSION=1.9.1
 
 RUN apk update
-RUN apk add curl
-RUN curl https://github.com/streamaserver/streama/releases/download/v${STREAMA_VERSION}/streama-${STREAMA_VERSION}.jar > /streama.jar
+RUN apk add wget
+RUN wget -o /streama.jar https://github.com/streamaserver/streama/releases/download/v${STREAMA_VERSION}/streama-${STREAMA_VERSION}.jar 
 
 FROM java:8-jre-alpine
 
