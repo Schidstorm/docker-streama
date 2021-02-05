@@ -1,5 +1,7 @@
 FROM alpine as downloader
 
+ARG STREAMA_VERSION=1.9.1
+
 RUN apk update
 RUN apk add curl
 RUN curl https://github.com/streamaserver/streama/releases/download/v${STREAMA_VERSION}/streama-${STREAMA_VERSION}.jar > /streama.jar
@@ -7,8 +9,6 @@ RUN curl https://github.com/streamaserver/streama/releases/download/v${STREAMA_V
 FROM java:8-jre-alpine
 
 RUN apk update && apk upgrade
-
-ARG STREAMA_VERSION
 
 RUN adduser -D -h /app streama
 USER streama
