@@ -25,4 +25,4 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_SECRET }}
           repository: necromant/${{ steps.split.outputs._1 }}
-          tags: 1.9.3
+          tags: 1.8.3

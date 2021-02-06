@@ -1,6 +1,6 @@
 FROM alpine as downloader
 
-ARG STREAMA_VERSION=1.9.3
+ARG STREAMA_VERSION=1.8.3
 
 RUN apk update
 RUN apk add curl
